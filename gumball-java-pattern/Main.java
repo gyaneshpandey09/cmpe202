@@ -7,17 +7,16 @@ public class Main {
 
 		System.out.println(gumballMachine);
 
-		gumballMachine.insertQuarter( 10 );
+		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
 
-		gumballMachine.insertQuarter( 25 );
+		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
-		gumballMachine.insertQuarter( 25 );
+		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
-		System.out.println("----------------");
 	}
 }

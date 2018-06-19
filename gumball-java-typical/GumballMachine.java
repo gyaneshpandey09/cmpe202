@@ -22,6 +22,14 @@ public class GumballMachine
     private String error_type2 = "Please insert 2 quarters only!";
     private String error_type3 = "Please insert atleast 50 cents. (Don't expect change!)";
 
+    public GumballMachine( int size)
+    {
+        // initialise instance variables
+        this.num_gumballs = size;
+        this.has_quarter = false;
+        this.mchn_type = 1;
+    }
+
     public GumballMachine( int size, int machine_type)
     {
         // initialise instance variables
@@ -37,7 +45,7 @@ public class GumballMachine
                 has_enough_coins = true;
             else 
                 has_enough_coins = false;
-            System.out.println( "Cents Inserted = " + this.sum) ;
+            System.out.println( "Cents Inserted = " + coin) ;
         } else if (mchn_type==2){
             if ( coin == 25 ){
                 this.sum += coin;
@@ -47,7 +55,7 @@ public class GumballMachine
                     has_enough_coins = false;
                 }                
             }
-            System.out.println( "Cents Inserted = " + this.sum) ;
+            System.out.println( "Cents Inserted = " + coin) ;
         } else if (mchn_type==3){
             this.sum += coin;
             if (this.sum >= 50){

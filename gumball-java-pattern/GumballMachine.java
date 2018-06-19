@@ -14,6 +14,21 @@ public class GumballMachine {
     int coin_limit = 0; // Coin limit at which to eject the Gumball
     int sum = 0; // Sum of total coins inserted
  
+    public GumballMachine(int numberGumballs) {
+        soldOutState = new SoldOutState(this);
+        insufficientCoinState = new InsufficientCoinState(this);
+        hasEnoughCoinState = new HasEnoughCoinState(this);
+        soldState = new SoldState(this);
+
+        this.count = numberGumballs;
+        if (numberGumballs > 0) {
+            state = insufficientCoinState;
+        }
+        
+        this.machine_type = 1;  
+        coin_limit=25;
+    }
+ 
     public GumballMachine(int numberGumballs, int type) {
         soldOutState = new SoldOutState(this);
         insufficientCoinState = new InsufficientCoinState(this);
